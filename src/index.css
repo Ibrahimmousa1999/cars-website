@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+    /* --color-primary-color: #313647;
+    --color-secondary-color: #764ba2; 
+    --color-background-color: #f7fafc;
+    --color-text-color: #2d3748;
+    --color-accent-color: #ed64a6; */
+
+    --color-primary: #FBD927;
+    --color-secondary: #12022F;
+    --color-gray-400: #594D6D;
+    --color-gray-500: #E5E5E5;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.poppins-font {
+    font-family: "Poppins", sans-serif;
+}
+
+.dm-sans-font {
+    font-family: "DM Sans", sans-serif;
+}
+.main-container {
+    @apply max-w-[1200px] mx-auto px-4;
+}
+
+.header-link{
+    font-family: "Poppins", sans-serif;
+    @apply text-white font-medium text-base transition hover:text-primary;
+}
+
+.hero-layer{
+background: linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0.52) 0%,
+  rgba(18, 2, 47, 0.09) 100%
+);
+}
