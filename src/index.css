@@ -11,12 +11,18 @@
     --color-secondary: #12022F;
     --color-gray-400: #594D6D;
     --color-gray-500: #E5E5E5;
+    --color-label: #5A7184;
+    --color-input-text: #959EAD;
+    --color-input-border:#C3CAD9
 }
 
 body {
     font-family: "Poppins", sans-serif;
 }
 
+button:hover {
+    @apply cursor-pointer;
+}
 .poppins-font {
     font-family: "Poppins", sans-serif;
 }
@@ -39,4 +45,11 @@ background: linear-gradient(
   rgba(0, 0, 0, 0.52) 0%,
   rgba(18, 2, 47, 0.09) 100%
 );
+}
+
+.input-style {
+    @apply border rounded border-input-border py-4 w-full px-5 text-secondary placeholder:text-input-text font-medium text-sm;
+}
+.input-label {
+    @apply text-base font-bold block w-fit text-label mb-2;
 }

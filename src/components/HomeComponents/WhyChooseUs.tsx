@@ -9,7 +9,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-import heroImage from "../../assets/images/hero-image.png";
+// import heroImage from "../../assets/images/hero-image.png";
 import Button from "../Button";
 
 export default function WhyChooseUs() {
@@ -204,7 +204,7 @@ const image3Ref = useRef<HTMLImageElement>(null);
                     <h2 className="dm-sans-font text-secondary text-4xl font-bold">
                         Why to Choose AMR
                     </h2>
-                    <p ref={descriptionRef} className="text-base mt-8 text-gray-400 max-w-[730px]">
+                    <p ref={descriptionRef} className="text-lg dm-sans-font mt-8 text-gray-400 max-w-[730px]">
                         We've done it carefully and simply. Combined with the ingredients makes for beautiful landings. It is definitely the tool you need to speed up your design process.
                     </p>
                 </div>
