@@ -1,55 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-    /* --color-primary-color: #313647;
+  /* --color-primary-color: #313647;
     --color-secondary-color: #764ba2; 
     --color-background-color: #f7fafc;
     --color-text-color: #2d3748;
     --color-accent-color: #ed64a6; */
 
-    --color-primary: #FBD927;
-    --color-secondary: #12022F;
-    --color-gray-400: #594D6D;
-    --color-gray-500: #E5E5E5;
-    --color-label: #5A7184;
-    --color-input-text: #959EAD;
-    --color-input-border:#C3CAD9
+  --color-primary: #fbd927;
+  --color-secondary: #12022f;
+  --color-gray-400: #594d6d;
+  --color-gray-500: #e5e5e5;
+  --color-label: #5a7184;
+  --color-input-text: #959ead;
+  --color-input-border: #c3cad9;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 button:hover {
-    @apply cursor-pointer;
+  @apply cursor-pointer;
 }
 .poppins-font {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .dm-sans-font {
-    font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 .main-container {
-    @apply max-w-[1200px] mx-auto px-6;
+  @apply max-w-[1200px] mx-auto px-6;
 }
 
-.header-link{
-    font-family: "Poppins", sans-serif;
-    @apply text-white font-medium text-base transition hover:text-primary;
+.header-link {
+  font-family: "Poppins", sans-serif;
+  @apply text-white font-medium text-base transition hover:text-primary;
 }
 
-.hero-layer{
-background: linear-gradient(
-  to right,
-  rgba(0, 0, 0, 0.52) 0%,
-  rgba(18, 2, 47, 0.09) 100%
-);
+.hero-layer {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.52) 0%,
+    rgba(18, 2, 47, 0.09) 100%
+  );
 }
 
 .input-style {
-    @apply border rounded border-input-border py-4 w-full px-5 text-secondary placeholder:text-input-text font-medium text-sm;
+  @apply border rounded border-input-border py-4 w-full px-5 text-secondary placeholder:text-input-text font-medium text-sm;
 }
 .input-label {
-    @apply text-base font-bold block w-fit text-label mb-2;
+  @apply text-base font-bold block w-fit text-label mb-2;
+}
+.react-datepicker-wrapper {
+  @apply w-full;
 }

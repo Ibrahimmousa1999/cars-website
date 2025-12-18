@@ -6,6 +6,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import About from "./pages/about-us";
 import Home from "./pages/home";
 import ContactUsPage from "./pages/contact-us";
+import BookAppointment from "./pages/book-appointment";
 
 import Dashboard from "./pages/dashboard/home";
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route path="/book-appointment" element={<BookAppointment />} />
 
         </Route>
 
