@@ -80,12 +80,12 @@ export default function OtherServices() {
     ]
 
     return (
-        <div className="mt-25" ref={containerRef}>
+        <div className="mt-12 lg:mt-25" ref={containerRef}>
             <div className="main-container">
-                <h2 className="mb-8 dm-sans-font text-secondary text-4xl font-bold">
+                <h2 className="mb-4 lg:mb-8 dm-sans-font text-secondary text-4xl font-bold">
                     Other Services                 
                 </h2>
-                <div className="grid grid-cols-3 gap-10">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10">
                     {services.map((service, index) => (
                         <div 
                             key={index}

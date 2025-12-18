@@ -3,8 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import WebsiteLayout from "./layouts/WebsiteLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
 
-import About from "./pages/aboutus";
+import About from "./pages/about-us";
 import Home from "./pages/home";
+import ContactUsPage from "./pages/contact-us";
 
 import Dashboard from "./pages/dashboard/home";
 function App() {
@@ -15,7 +16,9 @@ function App() {
         {/* 🌐 Website routes */}
         <Route element={<WebsiteLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
+
         </Route>
 
         {/* 📊 Dashboard routes */}

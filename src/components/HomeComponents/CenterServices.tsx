@@ -8,7 +8,7 @@ import ChooseUsGrid from "./ChooseUsGrid";
 
 export default function CenterServices() {
     return (
-        <div className="pt-4 mb-25">
+        <div className="lg:pt-4 mb-12 lg:mb-25">
             <div className="main-container">
                 <div className="text-center">
                     <h2 className="dm-sans-font text-secondary text-4xl font-bold">
@@ -19,7 +19,7 @@ We pffer lots of cars maintenance services, nibh vitae eget ut. Integer amet sce
                     </p>
                 </div>
             </div>
-            <div className="flex flex-col gap-25">
+            <div className="flex flex-col gap-6 lg:gap-25">
                 <ChooseUsGrid
                     mainImage={centerServices}
                     shapeImage={whyChooseUsShapeRightTop}

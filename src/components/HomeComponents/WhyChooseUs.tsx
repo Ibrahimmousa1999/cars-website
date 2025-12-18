@@ -196,7 +196,7 @@ const image3Ref = useRef<HTMLImageElement>(null);
                 className="absolute top-25 end-0 -z-10"
             />
             <div className="main-container relative z-10">
-                <div className="mb-12" ref={el => {
+                <div className="mb-6 lg:mb-12" ref={el => {
                     if (!el) return;
                     const h2 = el.querySelector('h2');
                     if (h2) headingRef.current = h2;
@@ -204,12 +204,12 @@ const image3Ref = useRef<HTMLImageElement>(null);
                     <h2 className="dm-sans-font text-secondary text-4xl font-bold">
                         Why to Choose AMR
                     </h2>
-                    <p ref={descriptionRef} className="text-lg dm-sans-font mt-8 text-gray-400 max-w-[730px]">
+                    <p ref={descriptionRef} className="text-lg dm-sans-font mt-4 lg:mt-8 text-gray-400 max-w-[730px]">
                         We've done it carefully and simply. Combined with the ingredients makes for beautiful landings. It is definitely the tool you need to speed up your design process.
                     </p>
                 </div>
                 <div className="grid grid-cols-5 gap-6">
-                    <div ref={contentRef} className="col-span-2 py-6">
+                    <div ref={contentRef} className="col-span-5 lg:col-span-2 lg:py-6">
                         <h3 className=" text-secondary text-[22px] font-bold">
                             Leo nibh morbi id faucibus eget sollicitudin lectus. Nunc nisi, euismod cursus in Vitae nec donec a mi lectus gravida.
                         </h3>
@@ -235,8 +235,8 @@ const image3Ref = useRef<HTMLImageElement>(null);
                             </div>
                         </div>
                     </div>
-                    <div className="col-span-3">
-                        <div className="grid grid-cols-5 grid-rows-2 gap-x-7 gap-y-5">
+                    <div className="col-span-5 lg:col-span-3">
+                        <div className="grid grid-cols-5 grid-rows-2 gap-4 lg:gap-x-7 lg:gap-y-5">
                             <div className="col-span-2">
                                 <img
                                     ref={image1Ref}

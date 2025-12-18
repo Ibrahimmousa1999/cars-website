@@ -1,23 +1,33 @@
+import { Link } from 'react-router-dom';
+
 interface ButtonProps {
-    // The 'children' prop is special in React. It's whatever is inside the component tags.
     children: React.ReactNode;
-    // We can add other optional props, like an onClick handler
     onClick?: () => void;
-    // We can also allow it to be disabled
     disabled?: boolean;
     classes?: string;
-    // And let's set the button type, which is good practice for forms
     type?: 'button' | 'submit' | 'reset';
+    fullWidth?: boolean;
+    to?: string; // New prop for link navigation
+    href?: string; // For external links
+    target?: string; // For link target
+    rel?: string; // For link rel attribute
 }
 
-function Button({ children, onClick, disabled = false, type = 'button', classes, ...props }: ButtonProps) {
-  return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      // --- UPDATED className (مُحسّن لمنع الوميض) ---
-      className={`
+function Button({ 
+    children, 
+    onClick, 
+    disabled = false, 
+    type = 'button', 
+    classes, 
+    fullWidth = false,
+    to,
+    href,
+    target,
+    rel,
+    ...props 
+}: ButtonProps) {
+    // Base button classes
+    const baseClasses = `
         relative
         bg-primary
         text-secondary
@@ -30,26 +40,55 @@ function Button({ children, onClick, disabled = false, type = 'button', classes,
         transform
         transition-colors
         duration-200
-        ease-out
-        will-change-transform
-        backface-hidden
-        cursor-pointer
-        disabled:opacity-50
-        disabled:cursor-not-allowed
-        disabled:hover:translate-y-0
-        disabled:hover:shadow-none
-        hover:bg-primary/70
+        hover:bg-primary/90
         focus:outline-none
         focus:ring-2
-        focus:ring-accent
-        focus:ring-opacity-50
-        ${classes || ""}
-      `}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-}
+        focus:ring-primary/50
+        ${fullWidth ? 'w-full' : ''}
+        ${classes || ''}
+    `;
 
+    // If it's a React Router link
+    if (to) {
+        return (
+            <Link
+                to={to}
+                className={`${baseClasses} inline-flex items-center justify-center`}
+                target={target}
+                rel={rel}
+                {...props}
+            >
+                {children}
+            </Link>
+        );
+    }
+
+    // If it's an external link
+    if (href) {
+        return (
+            <a
+                href={href}
+                className={`${baseClasses} inline-flex items-center justify-center`}
+                target={target}
+                rel={rel || 'noopener noreferrer'}
+                {...props}
+            >
+                {children}
+            </a>
+        );
+    }
+
+    // Default button
+    return (
+        <button
+            type={type}
+            onClick={onClick}
+            disabled={disabled}
+            className={baseClasses}
+            {...props}
+        >
+            {children}
+        </button>
+    );
+}
 export default Button;

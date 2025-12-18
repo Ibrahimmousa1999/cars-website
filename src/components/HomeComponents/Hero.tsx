@@ -4,8 +4,12 @@ import heroShapeBottomRight from "../../assets/images/hero-shape-bottom-right.sv
 import Button from "../Button";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-
-function Hero() {
+interface HeroProps {
+  header: string,
+  description: string,
+  isCenter?: boolean
+}
+function Hero({header, description, isCenter}: HeroProps) {
   const shapeTopLeft = useRef(null);
   const shapeBottomRight = useRef(null);
   const titleRef = useRef(null);
@@ -141,7 +145,7 @@ useEffect(() => {
         ref={shapeTopLeft}
         src={heroShapeTopLeft}
         alt="Shape"
-        className="absolute top-[90px] start-0 z-30"
+        className="absolute top-[72px] lg:top-[85px] start-0 z-30"
       />
       <img
         ref={shapeBottomRight}
@@ -153,26 +157,26 @@ useEffect(() => {
       {/* Hero Layer */}
       <div className="hero-layer absolute w-full h-full inset-0 z-20"></div>
 
-      <img ref={heroImageRef} src={heroImage} alt="Hero Image" className="absolute w-full h-full inset-0"/>
+      <img ref={heroImageRef} src={heroImage} alt="Hero Image" className="object-cover absolute w-full h-full inset-0"/>
 
       {/* Content */}
-      <div className="main-container absolute inset-0 z-40 flex items-center pt-[90px]">
+      <div className={`main-container absolute inset-0 z-40 flex items-center pt-[90px] ${isCenter ? 'justify-center text-center':''}`}>
         <div>
           <h1
             ref={titleRef}
-            className="text-white text-4xl md:text-5xl lg:text-[56px] leading-[130%] font-bold max-w-2xl"
+            className={`text-white text-4xl md:text-5xl lg:text-[56px] leading-[130%] font-bold  ${isCenter ? 'max-w-[820px]':'max-w-2xl'}`}
           >
-            We Always Create the Best Quality Products for Customers
+            {header}
+            
           </h1>
           <p
             ref={descriptionRef}
-            className="text-white text-lg leading-relaxed max-w-lg mt-3"
+            className={`text-white text-lg leading-relaxed  mt-3 ${isCenter ? 'mx-auto max-w-[820px]':'max-w-lg'}`}
           >
-            Odio tellus aliquet at tellus. Fames nulla nulla consequat amet,
-            facilisis. Ultrices pulvinar auctor id elementum nisi tincidunt
-            tristique vestibulum. At lectus non, gravida.
+            {description}
+            
           </p>
-          <Button ref={buttonRef} classes="px-16 mt-6">
+          <Button to="/contact-us" ref={buttonRef} classes="px-16 mt-6">
             Contact Us
           </Button>
         </div>

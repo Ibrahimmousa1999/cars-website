@@ -7,7 +7,9 @@ import ContactUs from "../components/HomeComponents/ContactUs";
 export default function HomePage() {
   return (
     <main>
-       <Hero />
+       <Hero description="Odio tellus aliquet at tellus. Fames nulla nulla consequat amet,
+            facilisis. Ultrices pulvinar auctor id elementum nisi tincidunt
+            tristique vestibulum. At lectus non, gravida." header="We Always Create the Best Quality Products for Customers" />
        <WhyChooseUs />
        <CenterServices />
        <OtherServies />

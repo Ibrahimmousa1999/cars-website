@@ -31,7 +31,7 @@ button:hover {
     font-family: "DM Sans", sans-serif;
 }
 .main-container {
-    @apply max-w-[1200px] mx-auto px-4;
+    @apply max-w-[1200px] mx-auto px-6;
 }
 
 .header-link{

@@ -13,6 +13,7 @@ interface ChooseUsGridProps {
     rowReverse?: boolean;
     classesShape?: string;
     children?: React.ReactNode;
+    showList?: boolean
 }
 
 export default function ChooseUsGrid({ 
@@ -22,6 +23,7 @@ export default function ChooseUsGrid({
     description, 
     rowReverse = false, 
     classesShape = '', 
+    showList = true,
     children 
 }: ChooseUsGridProps) {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -97,11 +99,11 @@ export default function ChooseUsGrid({
                     ref={shapeRef}
                     src={shapeImage}
                     alt="Shape"
-                    className={`absolute end-0 -z-10 ${classesShape ? classesShape : 'bottom-20'}`}
+                    className={`max-w-[80%] absolute end-0 -z-10 ${classesShape ? classesShape : 'bottom-20'}`}
                 />
-                <div className="main-container grid grid-cols-2 gap-7 mt-5.5">
-                    <div ref={contentRef} className={`pt-8 ${rowReverse ? 'order-2' : ''}`}>
-                        <div className="w-24 h-24 rounded-2xl bg-[#FFC729] drop-shadow-xl flex justify-center items-center mb-10">
+                <div className="main-container grid lg:grid-cols-2 gap-7 mt-5.5">
+                    <div ref={contentRef} className={`lg:pt-8 ${rowReverse ? 'lg:order-2' : ''}`}>
+                        <div className="w-24 h-24 rounded-2xl bg-[#FFC729] drop-shadow-xl flex justify-center items-center mb-5 lg:mb-10">
                             {children}
                         </div>
                         <h3 className="text-secondary text-[22px] font-bold">
@@ -110,17 +112,20 @@ export default function ChooseUsGrid({
                         <p className="text-lg mt-3 dm-sans-font text-gray-400 max-w-[530px]">
                             {description}
                         </p>
-                        <div className="grid gap-x-2 gap-y-8 grid-cols-2 mt-4">
+                        {
+                            showList ?? <div className="grid gap-x-2  gap-y-4 lg:gap-y-8 lg:grid-cols-2 mt-4">
                             {[...Array(6)].map((_, index) => (
                                 <div key={index} className="flex items-center gap-2">
                                     <span className="w-5 h-5 rounded border-3 border-[#0F427F] bg-primary"></span>
-                                    <h4 className="font-bold text-lg dm-sans-font">
+                                    <h4 className="font-bold lg:text-lg dm-sans-font">
                                         Ut massa accumsan
                                     </h4>
                                 </div>
                             ))}
                         </div>
-                        <div className="flex gap-6 mt-10">
+                        }
+                        
+                        <div className="flex gap-6 mt-5 lg:mt-10">
                             <div>
                                 <Button classes="px-6">
                                     Request services
@@ -135,7 +140,7 @@ export default function ChooseUsGrid({
                             </div>
                         </div>
                     </div>
-                    <div className={`${rowReverse ? 'order-1' : ''}`}>
+                    <div className={`${rowReverse ? 'lg:order-1' : ''}`}>
                         <img 
                             ref={imageRef}
                             src={mainImage} 

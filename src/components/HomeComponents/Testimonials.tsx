@@ -149,57 +149,65 @@ export default function Testimonials() {
     return () => clearTimeout(timer);
 }, [])
     return (
-        <div className="mt-25" ref={containerRef}>
+        <div className="mt-12 lg:mt-25 " ref={containerRef}>
             <div className="main-container">
-                <h2 className="text-center dm-sans-font text-secondary text-4xl font-bold">
+                <h2 className="text-center dm-sans-font text-secondary text-3xl sm:text-4xl font-bold mb-2">
                     Testimonials                 
                 </h2>
                 
-                <div className="mt-16 relative">
+                <div className="mt-10 lg:mt-16 relative">
                     <Swiper
                         ref={swiperRef}
                         modules={[Navigation, Autoplay]}
-                        spaceBetween={50}
+                        spaceBetween={30}
                         slidesPerView={1}
                         onSlideChange={(swiper) => {
                             // Optional: Add any additional logic when slide changes
                         }}
                         autoplay={{ 
                             delay: 5000,
-                            disableOnInteraction: false
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true
                         }}
                         loop={true}
                         className="testimonial-swiper"
                     >
                         {testimonials.map((testimonial) => (
-                            <SwiperSlide key={testimonial.id} className="pb-10">
-                                <div className="grid grid-cols-12 gap-25 items-end">
-                                    <div className="col-span-7 flex flex-col gap-14">
-                                        <h4 className="font-semibold dm-sans-font text-4xl text-secondary">
+                            <SwiperSlide key={testimonial.id} className="">
+                                <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-25 items-center lg:items-end">
+                                    <div className="pt-6 lg:pt-24 order-2 lg:order-1 col-span-12 lg:col-span-7 flex flex-col gap-6 lg:gap-8 xl:gap-14">
+                                        <h4 className="text-2xl sm:text-3xl lg:text-4xl font-semibold dm-sans-font text-secondary leading-tight">
                                             {testimonial.text}
                                         </h4>
-                                        <div className="author-info flex gap-4 items-center">
+                                        <div className="author-info flex gap-3 sm:gap-4 items-center ">
                                             <img 
                                                 src={testimonial.image} 
-                                                className="rounded-full w-16 h-16" 
+                                                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full object-cover" 
                                                 alt={testimonial.name} 
+                                                width={64}
+                                                height={64}
                                             />
                                             <div>
-                                                <h4 className="mb-1 dm-sans-font text-xl font-bold text-secondary">
+                                                <h4 className="text-lg sm:text-xl lg:text-xl font-bold dm-sans-font text-secondary">
                                                     {testimonial.name}
                                                 </h4>
-                                                <span className="text-gray-400">
+                                                <span className="text-sm sm:text-base text-gray-400">
                                                     {testimonial.role}
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-span-5">
-                                        <img 
-                                            src={TestimonialsImage1} 
-                                            className="w-full rounded-2xl max-h-[400px] object-cover" 
-                                            alt="Testimonial" 
-                                        />
+                                    <div className="order-1 lg:order-2 col-span-12 lg:col-span-5 w-full h-full">
+                                        <div className="relative rounded-2xl h-full">
+                                            <div className="aspect-[4/3] lg:aspect-square xl:aspect-[4/3] w-full h-full">
+                                                <img 
+                                                    src={TestimonialsImage1} 
+                                                    className="w-full h-full object-cover rounded-2xl" 
+                                                    alt="Testimonial" 
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </SwiperSlide>
@@ -207,13 +215,14 @@ export default function Testimonials() {
                     </Swiper>
 
                     {/* Navigation Buttons */}
-                    <div className="flex gap-5.5 absolute top-0 start-0 z-10">
+                    <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 md:gap-5 lg:gap-5.5 mt-8 lg:mt-0 lg:absolute lg:top-0 lg:start-0 z-10">
                         <button 
                             ref={prevButtonRef}
                             onClick={handlePrevClick}
-                            className="testimonial-prev group"
+                            className="testimonial-prev group w-12 h-12 sm:w-14 sm:h-14 lg:w-14 lg:h-14 xl:w-14 xl:h-14"
+                            aria-label="Previous testimonial"
                         >
-                            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg viewBox="0 0 56 56" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="1" y="1" width="54" height="54" rx="27" 
                                     className="stroke-[#959EAD] group-hover:stroke-primary transition-colors duration-300" 
                                     strokeWidth="2"/>
@@ -225,9 +234,10 @@ export default function Testimonials() {
                         <button 
                             ref={nextButtonRef}
                             onClick={handleNextClick}
-                            className="testimonial-next group"
+                            className="testimonial-next group w-12 h-12 sm:w-14 sm:h-14 lg:w-14 lg:h-14 xl:w-14 xl:h-14"
+                            aria-label="Next testimonial"
                         >
-                            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg viewBox="0 0 56 56" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="1" y="1" width="54" height="54" rx="27" 
                                     className="stroke-primary group-hover:stroke-primary transition-colors duration-300" 
                                     strokeWidth="2"/>

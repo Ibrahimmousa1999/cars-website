@@ -81,8 +81,8 @@ export default function ContactUs(){
 
     return (
         <>
-            <div ref={sectionRef} className="max-w-[1360px] mx-auto mt-25">
-                <div className="overflow-hidden bg-black rounded-xl py-20 px-18 grid grid-cols-12 gap-10 relative">
+            <div ref={sectionRef} className="max-w-[1360px] mx-auto mt-12 lg:mt-25">
+                <div className="overflow-hidden bg-black lg:rounded-xl p-8 lg:py-20 lg:px-18 grid lg:grid-cols-12 gap-10 relative">
                     <img
                         ref={shapeTopLeft}
                         src={heroShapeTopLeft}
@@ -96,9 +96,9 @@ export default function ContactUs(){
                         className="absolute bottom-0 end-0 z-10 grayscale-90"
                     />
 
-                    <div ref={contentRef} className="relative z-20 col-span-7">
+                    <div ref={contentRef} className="relative z-20 lg:col-span-7">
                         <h2 ref={headingRef} className="text-white text-5xl font-semibold">Get in Touch with Us</h2>
-                        <p className="text-lg text-gray-500 mt-10 text-normal max-w-[80%] opacity-50">
+                        <p className="text-lg text-gray-500 mt-10 text-normal lg:max-w-[80%] opacity-50">
                             Sagittis auctor leo vehicula augue suspendisse. Laoreet ut consectetur aenean luctus. Ac pharetra, at dolor at accumsan tellus viverra. Blandit velit, neque fermentum sed integer sed lorem. Lacus eget ultricies velit in.
                         </p>
                         <div className="border-t w-60 border-dashed border-[#B3BAC5] mt-10"></div>
@@ -108,7 +108,7 @@ export default function ContactUs(){
                         <p className="dm-sans-font text-white  text-xl font-semibold ">
                             Let’s do great things together!!
                         </p>
-                        <div className="grid grid-cols-2 mt-10">
+                        <div className="grid gap-6 sm:gap-0 sm:grid-cols-2 mt-10">
                             <div>
                                 <h3 className="opacity-80 text-gray-500 font-semibold text-base mb-3">
                                     Contact Us
@@ -150,7 +150,7 @@ export default function ContactUs(){
                             </div>
                         </div>
                     </div>
-                    <div ref={formRef} className="relative z-20 col-span-5 bg-white rounded-lg p-8">
+                    <div ref={formRef} className="relative z-20 lg:col-span-5 bg-white rounded-lg py-8 px-5 md:p-8">
                         <h2 className="text-3xl text-secondary font-semibold ">
                             Contact us
                         </h2>
