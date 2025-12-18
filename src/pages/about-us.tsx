@@ -100,7 +100,7 @@ export default function AboutUs() {
             </div>
              <div ref={section2Ref} className="main-container grid lg:grid-cols-2 gap-7 mt-5.5">
               
-                <div className="order-2 lg:-order-1 grid grid-cols-2 gap-8 items-end">
+                <div className="order-2 lg:-order-1 grid grid-cols-2 gap-6 lg:gap-8 items-end">
                   <img 
                       src={aboutUs2} 
                       className="rounded-2xl h-full w-full max-h-[400px]" 
