@@ -1,4 +1,3 @@
-import heroImage from "../../assets/images/hero-image.png";
 import heroShapeTopLeft from "../../assets/images/hero-shape-top-left.svg";
 import heroShapeBottomRight from "../../assets/images/hero-shape-bottom-right.svg";
 import Button from "../Button";
@@ -7,9 +6,10 @@ import { gsap } from "gsap";
 interface HeroProps {
   header: string,
   description: string,
+  image: string,
   isCenter?: boolean
 }
-function Hero({header, description, isCenter}: HeroProps) {
+function Hero({header, description, isCenter, image}: HeroProps) {
   const shapeTopLeft = useRef(null);
   const shapeBottomRight = useRef(null);
   const titleRef = useRef(null);
@@ -157,7 +157,7 @@ useEffect(() => {
       {/* Hero Layer */}
       <div className="hero-layer absolute w-full h-full inset-0 z-20"></div>
 
-      <img ref={heroImageRef} src={heroImage} alt="Hero Image" className="object-cover absolute w-full h-full inset-0"/>
+      <img ref={heroImageRef} src={image} alt="Hero Image" className="object-cover absolute w-full h-full inset-0"/>
 
       {/* Content */}
       <div className={`main-container absolute inset-0 z-40 flex items-center pt-[90px] ${isCenter ? 'justify-center text-center':''}`}>

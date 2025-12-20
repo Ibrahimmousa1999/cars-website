@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select';
+import { usePageMetadata } from "../hooks/usePageMetadata";
 
 // Custom styles for date picker
 const customDatePickerStyles = `
@@ -161,6 +162,10 @@ const customStyles: SelectStyles = {
 };
 
 export default function BookAppointment(){
+    usePageMetadata(
+      "Book an Appointment",
+      "Schedule your car service appointment online. Choose a convenient time and let our experts take care of your vehicle."
+    );
       const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
       const [selectedService, setSelectedService] = useState<SelectOption | null>(null);
       const [selectedOtherServices, setSelectedOtherServices] = useState<readonly SelectOption[]>([]);

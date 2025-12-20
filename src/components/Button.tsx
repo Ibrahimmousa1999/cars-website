@@ -52,6 +52,7 @@ function Button({
     if (to) {
         return (
             <Link
+                onClick={onClick}
                 to={to}
                 className={`${baseClasses} inline-flex items-center justify-center`}
                 target={target}

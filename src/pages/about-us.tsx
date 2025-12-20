@@ -4,13 +4,19 @@ import Button from "../components/Button";
 import aboutUs1 from "../assets/images/car-program.png";
 import aboutUs2 from "../assets/images/car-suspens.png";
 import imageChooseUs2 from "../assets/images/image-choose-us-2.png";
-
+import aboutUsImage from "../assets/images/about-us-base.png"
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePageMetadata } from "../hooks/usePageMetadata";
 
 export default function AboutUs() {
-  const section1Ref = useRef<HTMLDivElement>(null);
+    usePageMetadata(
+        "About Us",
+        "Learn more about our company, our mission, and the team behind our exceptional car services."
+    );
+    
+    const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -73,7 +79,8 @@ export default function AboutUs() {
   return (
     <main>
       <Hero
-      isCenter={true}
+        image={aboutUsImage}
+        isCenter={true}
         header="Odio tellus aliquet at tellus. Fames nulla nulla consequs"
         description="Odio tellus aliquet at tellus. Fames nulla nulla consequat amet, facilisis. Ultrices pulvinar auctor id elementum nisi tincidunt tristique vestibulum. At lectus non, gravida."
       />

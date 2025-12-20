@@ -62,8 +62,8 @@ function Header() {
             <Link to="/about-us" className="header-link">
               About Us
             </Link>
-            <Link to="/why-amr" className="header-link">
-              Why AMR
+            <Link to="/book-appointment" className="header-link">
+              Book appointment
             </Link>
           </nav>
            <Link to="/" className="shrink-0">
@@ -90,7 +90,7 @@ function Header() {
         {/* Mobile Menu */}
         <div 
           className={`lg:hidden ${isMenuOpen ? 'max-h-96 py-4' : 'max-h-0 py-0'} 
-          overflow-hidden transition-all duration-300 ease-in-out bg-black/95`}
+          overflow-hidden transition-all duration-300 ease-in-out bg-transparent`}
         >
           <nav className="flex flex-col space-y-4 px-4">
             <Link 
@@ -108,11 +108,11 @@ function Header() {
               About Us
             </Link>
             <Link 
-              to="/why-amr" 
+              to="/book-appointment" 
               className="text-white hover:text-primary text-lg py-2 border-b border-gray-800"
               onClick={() => setIsMenuOpen(false)}
             >
-              Why AMR
+              Book appointment
             </Link>
             <div className="pt-2">
               <a 
@@ -125,7 +125,7 @@ function Header() {
                 <span>(885) 761-6327</span>
               </a>
               <div className="mt-4">
-                <Button fullWidth>Contact Us</Button>
+                <Button onClick={() => setIsMenuOpen(false)} fullWidth to="/contact-us">Contact Us</Button>
               </div>
             </div>
           </nav>

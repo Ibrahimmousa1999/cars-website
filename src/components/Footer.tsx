@@ -8,15 +8,15 @@ export default function Footer() {
                 <div className="py-10 border-b border-[#e7e5ea]">
                     <div className="flex items-center justify-between flex-col gap-6 lg:gap-0 lg:flex-row">
                         <nav className="flex items-center gap-8">
-                            <Link to="/about" className="header-link text-black! hover:text-gray-400!">
+                            <Link to="/services" className="header-link text-black! hover:text-gray-400!">
                                 Our Services
                             </Link>
                         
-                            <Link to="/about" className="header-link text-black! hover:text-gray-400!">
+                            <Link to="/about-us" className="header-link text-black! hover:text-gray-400!">
                                 About Us
                             </Link>
-                            <Link to="/about" className="header-link text-black! hover:text-gray-400!">
-                                Why AMR
+                            <Link to="/book-appointment" className="header-link text-black! hover:text-gray-400!">
+                                Book appointment
                         </Link>
                        
                         </nav>
